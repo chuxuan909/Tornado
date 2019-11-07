@@ -8,6 +8,8 @@
 
 平台完成截图如下：
 
+![](https://github.com/chuxuan909/Tornado/blob/master/images/plat.png)
+
 ## DataStatistics
 
 数据库查询核心模块，连接Redis、Mongodb、MySQL数据库来查询需要的数据，并为Tornado框架提供Api接口。也可以直接使用模块进行查询
