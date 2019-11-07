@@ -8,7 +8,7 @@
 
 平台完成截图如下：
 
-![](https://raw.githubusercontent.com/chuxuan909/Tornado/master/images/plat.png)
+![](https://s2.ax1x.com/2019/11/07/MF0CmF.png)
 
 ## DataStatistics模块
 
