@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% block pageer %}
+
+    {% for key in  group_regpeople_dict %}
+    <tr>
+        <td> {{ key }} </td>
+        <td>{% raw count_list(group_regpeople_dict[key]) %}</td>
+        <td>{% raw count_list(group_active_dict[key]) %}</td>
+
+    </tr>
+    {% end %}
+</table>
+
+        <form class="form-horizontal" action="" method="get">
+            <div class="form-group">
+                 <label for="datetimepicker3" class="col-sm-2 control-label">Moth</label>
+                <div class="col-sm-4">
+                    <!--<input type="text" name="date_time" class="form-control" id="inputdate" placeholder="Email" value="{{ now_time }}">-->
+                    <div class='input-group date' id='datetimepicker3'>
+                    <input type='text' name="s_moth" class="form-control" value="2019-11" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                     </div>
+                </div>
+                 <button type="submit" class="btn btn-default">submit</button>
+            </div>
+        </form>
+
+
+{% end %}
+

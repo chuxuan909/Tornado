@@ -1,0 +1,10 @@
+<table class="table">
+    {% for key in  group_regpeople_dict %}
+    <tr>
+        <td> {{ key }} </td>
+        <td>{% raw count_list(group_regpeople_dict[key]) %}</td>
+        <td>{% raw count_list(group_active_dict[key]) %}</td>
+
+    </tr>
+    {% end %}
+</table>

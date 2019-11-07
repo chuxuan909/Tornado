@@ -1,0 +1,334 @@
+{% extends 'index.html' %}
+
+{% block col %}
+
+<div class="row">
+    <div class="col-md-6"  align="center">
+
+    </div>
+
+    <div class="col-md-6"  align="center">
+        <h4>Data:  {{ pots_time_data }} </h4>
+               <div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span6">
+			<div class="tabbable" id="tabs-823394">
+
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-487823">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th class="info">ID </th>
+                                    <th class="info">{{ reflect_zh_dict[kind] }} </th>
+                                    <th class="info">{{ reflect_zh_dict['gold'] }} </th>
+                                </tr>
+
+                                {% for i in  col_list%}
+                                    {% if col_list.index(i)+1 <= 10 %}
+                                    <tr>
+                                        <td>{{ col_list.index(i)+1 }}</td>
+                                        {% if kind == 'outputs' or kind=='inputs' %}
+                                            {% for j in i %}
+                                            <td class="warning">{{ j }}</td>
+                                            {% end %}
+                                        {% else %}
+                                            <td class="warning">{{ i['uid'] }}</td>
+                                            <td class="warning">{{ i['revenue'] }}</td>
+                                        {% end %}
+
+                                    </tr>
+                                    {% end %}
+                                {% end %}
+
+                        </table>
+
+					</div>
+					<div class="tab-pane" id="panel-659161">
+
+			                      <table class="table table-bordered">
+                                      <tr><th class="info">ID </th>
+                                        <th class="info">{{ reflect_zh_dict[kind] }} </th>
+                                        <th class="info">{{ reflect_zh_dict['gold'] }} </th>
+                                      </tr>
+
+                                {% for i in  col_list%}
+                                    {% if 10 < col_list.index(i)+1 <= 20 %}
+                                    <tr>
+                                        <td>{{ col_list.index(i)+1 }}</td>
+                                        {% if kind == 'outputs' or kind=='inputs' %}
+                                            {% for j in i %}
+                                            <td class="warning">{{ j }}</td>
+                                            {% end %}
+                                        {% else %}
+                                            <td class="warning">{{ i['uid'] }}</td>
+                                            <td class="warning">{{ i['revenue'] }}</td>
+                                        {% end %}
+
+                                    </tr>
+                                    {% end %}
+                                {% end %}
+
+                        </table>
+					</div>
+                    <div class="tab-pane" id="panel-659162">
+
+			                      <table class="table table-bordered">
+                                      <tr><th class="info">ID </th>
+                                        <th class="info">{{ reflect_zh_dict[kind] }} </th>
+                                        <th class="info">{{ reflect_zh_dict['gold'] }} </th>
+                                      </tr>
+
+                                {% for i in  col_list%}
+                                    {% if 20 < col_list.index(i)+1 <= 30 %}
+                                    <tr>
+                                        <td>{{ col_list.index(i)+1 }}</td>
+                                        {% if kind == 'outputs' or kind=='inputs' %}
+                                            {% for j in i %}
+                                            <td class="warning">{{ j }}</td>
+                                            {% end %}
+                                        {% else %}
+                                            <td class="warning">{{ i['uid'] }}</td>
+                                            <td class="warning">{{ i['revenue'] }}</td>
+                                        {% end %}
+
+                                    </tr>
+                                    {% end %}
+                                {% end %}
+
+                        </table>
+					</div>
+                    <div class="tab-pane" id="panel-659163">
+
+			                      <table class="table table-bordered">
+                                      <tr><th class="info">ID </th>
+                                        <th class="info">{{ reflect_zh_dict[kind] }} </th>
+                                        <th class="info">{{ reflect_zh_dict['gold'] }} </th>
+                                      </tr>
+
+                                {% for i in  col_list%}
+                                    {% if 30 < col_list.index(i)+1 <= 40 %}
+                                    <tr>
+                                        <td>{{ col_list.index(i)+1 }}</td>
+                                        {% if kind == 'outputs' or kind=='inputs' %}
+                                            {% for j in i %}
+                                            <td class="warning">{{ j }}</td>
+                                            {% end %}
+                                        {% else %}
+                                            <td class="warning">{{ i['uid'] }}</td>
+                                            <td class="warning">{{ i['revenue'] }}</td>
+                                        {% end %}
+
+                                    </tr>
+                                    {% end %}
+                                {% end %}
+
+                        </table>
+					</div>
+                    <div class="tab-pane" id="panel-659164">
+
+			                      <table class="table table-bordered">
+                                      <tr><th class="info">ID </th>
+                                        <th class="info">{{ reflect_zh_dict[kind] }} </th>
+                                        <th class="info">{{ reflect_zh_dict['gold'] }} </th>
+                                      </tr>
+
+                                {% for i in  col_list%}
+                                    {% if 40 < col_list.index(i)+1 <= 50 %}
+                                    <tr>
+                                        <td>{{ col_list.index(i)+1 }}</td>
+                                        {% if kind == 'outputs' or kind=='inputs' %}
+                                            {% for j in i %}
+                                            <td class="warning">{{ j }}</td>
+                                            {% end %}
+                                        {% else %}
+                                            <td class="warning">{{ i['uid'] }}</td>
+                                            <td class="warning">{{ i['revenue'] }}</td>
+                                        {% end %}
+
+                                    </tr>
+                                    {% end %}
+                                {% end %}
+
+                        </table>
+					</div>
+                    <div class="tab-pane" id="panel-659165">
+
+			                      <table class="table table-bordered">
+                                      <tr><th class="info">ID </th>
+                                        <th class="info">{{ reflect_zh_dict[kind] }} </th>
+                                        <th class="info">{{ reflect_zh_dict['gold'] }} </th>
+                                      </tr>
+
+                                {% for i in  col_list%}
+                                    {% if 50 < col_list.index(i)+1 <= 60 %}
+                                    <tr>
+                                        <td>{{ col_list.index(i)+1 }}</td>
+                                        {% if kind == 'outputs' or kind=='inputs' %}
+                                            {% for j in i %}
+                                            <td class="warning">{{ j }}</td>
+                                            {% end %}
+                                        {% else %}
+                                            <td class="warning">{{ i['uid'] }}</td>
+                                            <td class="warning">{{ i['revenue'] }}</td>
+                                        {% end %}
+
+                                    </tr>
+                                    {% end %}
+                                {% end %}
+
+                        </table>
+					</div>
+                    <div class="tab-pane" id="panel-659166">
+
+			                      <table class="table table-bordered">
+                                      <tr><th class="info">ID </th>
+                                        <th class="info">{{ reflect_zh_dict[kind] }} </th>
+                                        <th class="info">{{ reflect_zh_dict['gold'] }} </th>
+                                      </tr>
+
+                                {% for i in  col_list%}
+                                    {% if 60 < col_list.index(i)+1 <= 70 %}
+                                    <tr>
+                                        <td>{{ col_list.index(i)+1 }}</td>
+                                        {% if kind == 'outputs' or kind=='inputs' %}
+                                            {% for j in i %}
+                                            <td class="warning">{{ j }}</td>
+                                            {% end %}
+                                        {% else %}
+                                            <td class="warning">{{ i['uid'] }}</td>
+                                            <td class="warning">{{ i['revenue'] }}</td>
+                                        {% end %}
+
+                                    </tr>
+                                    {% end %}
+                                {% end %}
+
+                        </table>
+					</div>
+                    <div class="tab-pane" id="panel-659167">
+
+			                      <table class="table table-bordered">
+                                      <tr><th class="info">ID </th>
+                                        <th class="info">{{ reflect_zh_dict[kind] }} </th>
+                                        <th class="info">{{ reflect_zh_dict['gold'] }} </th>
+                                      </tr>
+
+                                {% for i in  col_list%}
+                                    {% if 70 < col_list.index(i)+1 <= 80 %}
+                                    <tr>
+                                        <td>{{ col_list.index(i)+1 }}</td>
+                                        {% if kind == 'outputs' or kind=='inputs' %}
+                                            {% for j in i %}
+                                            <td class="warning">{{ j }}</td>
+                                            {% end %}
+                                        {% else %}
+                                            <td class="warning">{{ i['uid'] }}</td>
+                                            <td class="warning">{{ i['revenue'] }}</td>
+                                        {% end %}
+
+                                    </tr>
+                                    {% end %}
+                                {% end %}
+
+                        </table>
+					</div>
+                    <div class="tab-pane" id="panel-659168">
+
+			                      <table class="table table-bordered">
+                                      <tr><th class="info">ID </th>
+                                        <th class="info">{{ reflect_zh_dict[kind] }} </th>
+                                        <th class="info">{{ reflect_zh_dict['gold'] }} </th>
+                                      </tr>
+
+                                {% for i in  col_list%}
+                                    {% if 80 < col_list.index(i)+1 <= 90 %}
+                                    <tr>
+                                        <td>{{ col_list.index(i)+1 }}</td>
+                                        {% if kind == 'outputs' or kind=='inputs' %}
+                                            {% for j in i %}
+                                            <td class="warning">{{ j }}</td>
+                                            {% end %}
+                                        {% else %}
+                                            <td class="warning">{{ i['uid'] }}</td>
+                                            <td class="warning">{{ i['revenue'] }}</td>
+                                        {% end %}
+
+                                    </tr>
+                                    {% end %}
+                                {% end %}
+
+                        </table>
+					</div>
+                    <div class="tab-pane" id="panel-659169">
+
+			                      <table class="table table-bordered">
+                                      <tr><th class="info">ID </th>
+                                        <th class="info">{{ reflect_zh_dict[kind] }} </th>
+                                        <th class="info">{{ reflect_zh_dict['gold'] }} </th>
+                                      </tr>
+
+                                {% for i in  col_list%}
+                                    {% if 90 < col_list.index(i)+1 <= 100 %}
+                                    <tr>
+                                        <td>{{ col_list.index(i)+1 }}</td>
+                                        {% if kind == 'outputs' or kind=='inputs' %}
+                                            {% for j in i %}
+                                            <td class="warning">{{ j }}</td>
+                                            {% end %}
+                                        {% else %}
+                                            <td class="warning">{{ i['uid'] }}</td>
+                                            <td class="warning">{{ i['revenue'] }}</td>
+                                        {% end %}
+
+                                    </tr>
+                                    {% end %}
+                                {% end %}
+
+                        </table>
+					</div>
+				</div>
+                <ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#panel-487823" data-toggle="tab">1</a>
+					</li>
+					<li>
+						<a href="#panel-659161" data-toggle="tab">2</a>
+					</li>
+                    <li>
+						<a href="#panel-659162" data-toggle="tab">3</a>
+					</li>
+                    <li>
+						<a href="#panel-659163" data-toggle="tab">4</a>
+					</li>
+                    <li>
+						<a href="#panel-659164" data-toggle="tab">5</a>
+					</li>
+                    <li>
+						<a href="#panel-659165" data-toggle="tab">6</a>
+					</li>
+                    <li>
+						<a href="#panel-659166" data-toggle="tab">7</a>
+					</li>
+                    <li>
+						<a href="#panel-659167" data-toggle="tab">8</a>
+					</li>
+                    <li>
+						<a href="#panel-659168" data-toggle="tab">9</a>
+					</li>
+                    <li>
+						<a href="#panel-659169" data-toggle="tab">10</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="span6">
+		</div>
+	</div>
+</div>
+
+    </div>
+    <div class="col-md-6"  align="center">
+    </div>
+
+</div>
+  {% end %}

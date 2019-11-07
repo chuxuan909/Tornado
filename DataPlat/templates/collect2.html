@@ -1,0 +1,88 @@
+{% extends 'index.html' %}
+
+{% block col %}
+
+<div class="row">
+    <div class="col-md-6"  align="center">
+
+    </div>
+
+    <div class="col-md-6"  align="center">
+        <h4>Data:  {{ pots_time_data }} </h4>
+        <table class="table table-bordered">
+            <tr>
+                <th class="info">ID </th>
+                <th class="info">{{ reflect_zh_dict[kind] }} </th>
+                <th class="info">{{ reflect_zh_dict['gold'] }} </th>
+                <!--<td class="active">{% raw count_list(col_list) %}</td>-->
+            </tr>
+                {% for i in col_list %}
+                <tr>
+                    <td>{{ col_list.index(i)+1 }} </td>
+                     {% if kind == 'outputs' or kind=='inputs' %}
+                         {% for j in i %}
+                        <td class="warning">{{ j }}</td>
+                         {% end %}
+                     {% else %}
+                        <td class="warning">{{ i['uid'] }}</td>
+                        <td class="warning">{{ i['revenue'] }}</td>
+                     {% end %}
+                </tr>
+                {% end %}
+        </table>
+
+    </div>
+    <div class="col-md-6"  align="center">
+
+<!--<div class="container-fluid">-->
+	<!--<div class="row-fluid">-->
+		<!--<div class="span6">-->
+			<!--<div class="tabbable" id="tabs-823394">-->
+				<!--<ul class="nav nav-tabs">-->
+					<!--<li class="active">-->
+						<!--<a href="#panel-487823" data-toggle="tab">1</a>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<a href="#panel-659161" data-toggle="tab">2</a>-->
+					<!--</li>-->
+				<!--</ul>-->
+				<!--<div class="tab-content">-->
+					<!--<div class="tab-pane active" id="panel-487823">-->
+
+                            <!--<table class="table table-bordered">-->
+
+                                <!--{% for i in  col_list%}-->
+                                    <!--{% if col_list.index(i)+1 <= 10 %}-->
+                                    <!--<tr><td>{{ col_list.index(i)+1 }}</td><td>{{ i }}</td><td>{{ i }}</td></tr>-->
+                                    <!--{% end %}-->
+                                <!--{% end %}-->
+
+                                <!--&lt;!&ndash;<tr><td>1</td><td>{{ col_list[0][0] }}</td><td>{{ col_list[0][1] }}</td></tr>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<tr><td>2</td><td>{{ col_list[1][0] }}</td><td>{{ col_list[1][1] }}</td></tr>&ndash;&gt;-->
+                        <!--</table>-->
+
+					<!--</div>-->
+					<!--<div class="tab-pane" id="panel-659161">-->
+			                            <!--<table class="table table-bordered">-->
+                                <!--{% for i in  col_list %}-->
+                                    <!--{% if  10 < col_list.index(i)+1 <= 20 %}-->
+                                    <!--<tr><td>{{ col_list.index(i)+1 }}</td><td>{{ i }}</td><td>{{ i }}</td></tr>-->
+                                    <!--{% end %}-->
+                                <!--{% end %}-->
+                                <!--&lt;!&ndash;<tr><td>3</td><td>{{ col_list[2][0] }}</td><td>{{ col_list[2][1] }}</td></tr>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<tr><td>4</td><td>{{ col_list[3][0] }}</td><td>{{ col_list[3][1] }}</td></tr>&ndash;&gt;-->
+                        <!--</table>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
+		<!--<div class="span6">-->
+		<!--</div>-->
+	<!--</div>-->
+<!--</div>-->
+
+
+    </div>
+
+</div>
+  {% end %}

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+   <link href="{{static_url('css/bootstrap.css')}}" rel="stylesheet">
+   <link href="{{static_url('css/bootstrap-theme.css')}}" rel="stylesheet">
+   <link href="{{static_url('css/bootstrap-datetimepicker.min.css')}}" rel="stylesheet">
+   <script src="{{static_url('js/jquery-3.4.1.min.js')}}"></script>
+</head>
+<body>
+<div class="row">
+    <div class="col-md-6"  align="center">
+        <h1>{{ date_time }} 玩家税收情况一览</h1>
+    </div>
+    <div class="col-md-6"  align="center">
+        <h1>其他信息查询</h1>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <form class="form-horizontal" action="{{ revenues_url }}" method="post">
+            <div class="form-group">
+                 <label for="datetimepicker2" class="col-sm-2 control-label">税收查询日期</label>
+                <div class="col-sm-4">
+                    <!--<input type="text" name="date_time" class="form-control" id="inputdate" placeholder="Email" value="{{ now_time }}">-->
+                    <div class='input-group date' id='datetimepicker2'>
+                    <input type='text' name="s_time" class="form-control" value="{{ date_time }}" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                     </div>
+                </div>
+                 <button type="submit" class="btn btn-default">查询</button>
+            </div>
+        </form>
+        <table class="table table-striped">
+            <tr>
+                <th>游戏</th>
+                <th>低级场</th>
+                <th>中级场</th>
+                <th>高级场</th>
+                <th>游戏税收总计</th>
+            </tr>
+            <tr class="warning">
+                <th>捕鱼</th>
+                    {% for index in show_dicts['fish'] %}
+                    <td>{{ index }}</td>
+                    {% end %}
+                    <td>{% raw  all_people(show_dicts['fish']) %}</td>
+            </tr>
+            <tr class="info">
+                <th>娃娃机</th>
+                    {% for index in show_dicts['doll'] %}
+                    <td>{{ index }}</td>
+                    {% end %}
+                    <td>{% raw  all_people(show_dicts['doll']) %}</td>
+            </tr>
+            <tr class="danger">
+                <th>斗地主-经典洗牌</th>
+                    {% for index in show_dicts['chess']['classic'] %}
+                    <td>{{ index }}</td>
+                    {% end %}
+                    <td>{% raw  all_people(show_dicts['chess']['classic']) %}</td>
+            </tr>
+            <tr class="danger">
+                <th>斗地主-经典不洗牌</th>
+                    {% for index in show_dicts['chess']['classic_no_shuffle'] %}
+                    <td>{{ index }}</td>
+                    {% end %}
+                    <td>{% raw  all_people(show_dicts['chess']['classic_no_shuffle']) %}</td>
+            </tr>
+            <tr class="danger">
+                <th>斗地主-经典癞子</th>
+                    {% for index in show_dicts['chess']['slander'] %}
+                    <td>{{ index }}</td>
+                    {% end %}
+                    <td>{% raw  all_people(show_dicts['chess']['slander']) %}</td>
+            </tr>
+            <tr class="danger">
+                <th>斗地主-天地癞子</th>
+                    {% for index in show_dicts['chess']['double_slander'] %}
+                    <td>{{ index }}</td>
+                    {% end %}
+                <td>{% raw  all_people(show_dicts['chess']['double_slander']) %}</td>
+            </tr>
+            <tr class="success">
+                <th>幸运闯关</th>
+                    {% for index in show_dicts['turntable'] %}
+                    <td>{{ index }}</td>
+                    {% end %}
+                <td>{% raw  all_people(show_dicts['turntable']) %}</td>
+            </tr>
+            <tr>
+                <th>所有游戏总计</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    {% for index in show_dicts['total'] %}
+                    <td>{{ index }}</td>
+                    {% end %}
+            </tr>
+        </table>
+    </div>
+
+    <div class="col-md-6">
+        <form class="form-horizontal" action="{{ col }}" method="post">
+            <div class="form-group">
+                 <label for="datetimepicker1" class="col-sm-2 control-label">查询日期</label>
+                <div class="col-sm-4">
+                    <!--<input type="text" name="date_time" class="form-control" id="inputdate" placeholder="Email" value="{{ now_time }}">-->
+
+
+                    <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' name="date_time" class="form-control" value="{{ now_time }}" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                     </div>
+                </div>
+            </div>
+            <div class="form-group">
+                 <label for="colkind" class="col-sm-2 control-label">查询种类</label>
+                <div class="col-sm-6">
+                    <select class="form-control" id="colkind" name="kinds">
+                        <!--<option value ="regpeople">注册人数</option>-->
+                        <!--<option value ="people">总注册人数</option>-->
+                        <!--<option value="pay">支付人数</option>-->
+                        <!--<option value="record">游戏活跃（记录大于50条）人数</option>-->
+                        <!--<option value="active">活跃人数</option>-->
+                        <option value="outputs">赢家排名</option>
+                        <option value="win_rank">历史赢家排名</option>
+                        <option value="inputs">输家排名</option>
+                        <option value="lose_rank">历史输家排名</option>
+                    </select>
+                 </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">查询</button>
+                </div>
+            </div>
+        </form>
+  </div>
+</div>
+<div class="row">
+       <div class="col-md-6"  align="center">
+           <h1>注册总人数</h1> <span class="label label-danger" style="font-size: medium">{% raw all_people(all_people_list) %}</span>
+            <form>
+
+            </form>
+           <table class="table table-striped">
+         <tr>
+        <th>日期</th>
+        <th>注册人数</th>
+        <th>活跃用户</th>
+        </tr>
+           {% block pageer %}
+            {% end %}
+        {%  if not group_regpeople_dict   %}
+           </table>
+           {% end %}
+
+           <nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+    {% for i in page_list %}
+    <li><a href="/pages/{{ i }}/{{ page_x }}{{ page_y }}?s_moth={{ s_moth }}">{{ i }}</a></li>
+    {% end %}
+    <li class="disabled"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+  </ul>
+</nav>
+
+    </div>
+    <div class="col-md-6"  align="center">
+        <h1>查询结果</h1>
+    </div>
+
+</div>
+{% block col %}
+{% end %}
+
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker({
+            minView : "month",
+            language : 'zh-CN',
+            format : 'yyyy-mm-dd',
+            autoclose : true,
+            todayBtn : true
+        });
+
+        $('#datetimepicker2').datetimepicker({
+            minView : "month",
+            language : 'zh-CN',
+            format : 'yyyy-mm-dd',
+            autoclose : true,
+            todayBtn : true
+        });
+
+        $('#datetimepicker3').datetimepicker({
+            minView : "year",
+            startView:'year',
+            language : 'zh-CN',
+            format : 'yyyy-mm',
+            autoclose : true,
+            todayBtn : true
+        });
+    });
+</script>
+
+<!--<script src="{{static_url('js/moment-with-locales.min.js')}}"></script>-->
+<script src="{{static_url('js/bootstrap.js')}}"></script>
+<script src="{{static_url('js/bootstrap-datetimepicker.js')}}"></script>
+<script src="{{static_url('js/bootstrap-datetimepicker.zh-CN.js')}}"></script>
+</body>
+</html>
