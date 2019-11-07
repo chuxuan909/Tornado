@@ -8,9 +8,9 @@
 
 平台完成截图如下：
 
-![](https://github.com/chuxuan909/Tornado/blob/master/images/plat.png)
+![](https://raw.githubusercontent.com/chuxuan909/Tornado/master/images/plat.png)
 
-## DataStatistics
+## DataStatistics模块
 
 数据库查询核心模块，连接Redis、Mongodb、MySQL数据库来查询需要的数据，并为Tornado框架提供Api接口。也可以直接使用模块进行查询
 
@@ -47,7 +47,7 @@ coll.py
 - **MongoFun：** 处理Mongodb查询
 - **RedisFunction：** 处理Redis查询
 
-## DataPlat 
+## DataPlat 模块
 
 Tornado框架的核心代码，利用数据库查询核心模块的API获取到数据库的数据，经过处理后展示到bootstrap前端
 
