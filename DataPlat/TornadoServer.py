@@ -8,12 +8,13 @@ import os,sys
 import time,datetime
 
 #查询模块路径
-DataGo_Path='F:/PythonBuild/DataStatistics'
-# DataGo_Path='/home/Tornado/DataStatistics' #linux下路径
+# DataGo_Path='F:/PythonBuild/DataStatistics'
+DataGo_Path='/home/Tornado/DataStatistics' #linux下路径
 
 #环境变量
 sys.path.append(DataGo_Path)
 from core import DataGo
+from core import get_time
 
 #变量
 reflect_zh_dict={
@@ -270,7 +271,8 @@ class PageHandler(RevenusHandler):
 
 
 def get_date_time():
-    return time.strftime("%Y-%m-%d", time.localtime())
+    #return time.strftime("%Y-%m-%d", time.localtime())
+    return get_time.get_webservertime('www.baidu.com')   
 
 def people(conm_list):
     '''
@@ -309,7 +311,7 @@ def get_info_list(col_function,data_time):
     #     return col_obj.data_return()
     #
     data_time = ope_date(data_time)
-    print('data_time is ',data_time)
+    #print('data_time is ',data_time)
     col_obj = DataGo.Collets([None, col_function, data_time])
     return col_obj.data_return()
 
@@ -345,10 +347,10 @@ def get_date_day(date_time_string):
 
 def date_format_fun(date_format,date_list_num):
     if date_list_num <= 9:
-        print('%s-%s-0%s' % (date_format.split('-')[0], date_format.split('-')[1], date_list_num))
+      #  print('%s-%s-0%s' % (date_format.split('-')[0], date_format.split('-')[1], date_list_num))
         return '%s-%s-0%s' % (date_format.split('-')[0], date_format.split('-')[1], date_list_num)
     else:
-        print('%s-%s-%s' % (date_format.split('-')[0], date_format.split('-')[1], date_list_num))
+       # print('%s-%s-%s' % (date_format.split('-')[0], date_format.split('-')[1], date_list_num))
         return '%s-%s-%s' % (date_format.split('-')[0], date_format.split('-')[1], date_list_num)
 
 
@@ -360,7 +362,7 @@ if __name__=='__main__':
     pange_x, page_y = get_date_day(now_time)
     page_list = list(range(1, pange_x + 1))
     page_list.reverse()
-    print(page_list)
+#    print(page_list)
     data_time = date_oper_before(get_date_time())
     revenues_dict = get_info_ditc('revenues', data_time)
     mysql_list, mongo_list, redis_list = get_info_list('people', now_time)

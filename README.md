@@ -46,6 +46,23 @@ coll.py
 - **DBfunction：** 处理MySQL查询
 - **MongoFun：** 处理Mongodb查询
 - **RedisFunction：** 处理Redis查询
+- **get_time：** 从网络上获取当前时间
+
+关于get_time模块：
+
+防止本地时间被修改，无法正常从本地获取时间的情况，如果从本地获取当前时间，修改```TornadoServer.py```文件内273行```get_date_time()```函数内的代码：
+
+```python
+def get_date_time():
+    #return time.strftime("%Y-%m-%d", time.localtime())
+    return get_time.get_webservertime('www.baidu.com')   
+
+#修改为：
+
+def get_date_time():
+    return time.strftime("%Y-%m-%d", time.localtime())
+    #return get_time.get_webservertime('www.baidu.com')
+```
 
 ## DataPlat 模块
 
